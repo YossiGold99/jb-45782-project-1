@@ -54,3 +54,11 @@ function clearAllTasks() {
     </div>
   `;
 }
+
+taskBoard.innerHTML += `
+  <div class="task">
+    <p>${task.description}</p>
+    <p>${task.date} ${task.time}</p>
+    <button onclick="clearTask(${index})" class="btn btn-sm btn-danger">Delete</button>
+  </div>
+`;
