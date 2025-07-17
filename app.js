@@ -46,25 +46,18 @@ function renderTasks() {
     return;
   }
 
-  // for (let i = 0; i < tasks.length; i++) {
-  //   const task = tasks[i];
-  //   board.innerHTML += `
-  //     <div class="task">
-  //       <p>${task.description}</p>
-  //       <p>${task.date} ${task.time}</p>
-  //       <button onclick="clearTask(${i})" class="btn btn-sm btn-danger">Delete</button>
-  //     </div>
-  //   `;
-  // }
-
   for (let i = 0; i < tasks.length; i++) {
     const task = tasks[i];
     board.innerHTML += `
-    <div class="task">
-      <button onclick="clearTask(${i})" class="delete-btn">✖</button>
-      <p>${task.description}</p>
-      <p>${task.date} ${task.time}</p>
-    </div>
-  `;
+      <div class="task fade-in">
+        <button onclick="clearTask(${i})" class="delete-btn">✖</button>
+        <div class="task-text">
+          ${task.description}
+        </div>
+        <div class="task-time">
+          ${task.date}<br>${task.time}
+        </div>
+      </div>
+    `;
   }
 }
